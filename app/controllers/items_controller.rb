@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   def index
     @items = Item.includes(:category).page(params[:page]).per(2)
     @items = @items.where('name LIKE ?', "%#{params[:name]}%") if params[:name]
+    @items = @items.where(:category_id => Category.find_by_name(params[:category]).id) if params[:category]
   end
 
   # GET /items/1

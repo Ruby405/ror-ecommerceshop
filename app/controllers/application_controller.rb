@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   def initialize
     super
     @categories = Category.all
+    @categories_select = @categories.each_with_object({}) { |category, hash| hash[category.name] = category.id }
   end
 
 end

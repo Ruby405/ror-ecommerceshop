@@ -1,33 +1,43 @@
-<%= form_for(@item) do |f| %>
-  <% if @item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+<% if @item.errors.any? %>
+    <div class="alert alert-danger">
+      <h4><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h4>
 
       <ul>
-      <% @item.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @item.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
-  <% end %>
+<% end %>
 
-  <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.text_field :category_id %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= form_for @item, html: {style: 'width: 200px', role: 'form'} do |f| %>
+
+
+    <div class="form-group">
+      <%= f.label :category_id %>
+      <br>
+      <%= f.select :category_id, @categories_select, {:prompt => 'Select Category'}, {:class => 'form-control'} %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :name %>
+      <br>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description %>
+      <br>
+      <%= f.text_area :description, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :price %>
+      <br>
+      <%= f.text_field :price, class: 'form-control' %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Submit', :class => 'btn btn-default' %>
+    </div>
 <% end %>
