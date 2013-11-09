@@ -4,7 +4,8 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    @items = Item.includes(:category).page(params[:page]).per(2)
+    @items = @items.where('name LIKE ?', "%#{params[:name]}%") if params[:name]
   end
 
   # GET /items/1
