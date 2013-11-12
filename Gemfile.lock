@@ -1,30 +1,57 @@
-GEM
-  remote: https://rubygems.org/
+GIT
+  remote: git://github.com/binarylogic/authlogic.git
+  revision: abc09970ed1fad98c6c12f4ca64d1670d37d11db
   specs:
-    actionmailer (4.0.0)
-      actionpack (= 4.0.0)
-      mail (~> 2.5.3)
-    actionpack (4.0.0)
-      activesupport (= 4.0.0)
+    authlogic (3.3.0)
+      activerecord (>= 3.2)
+      activesupport (>= 3.2)
+
+GIT
+  remote: git://github.com/rails/rails.git
+  revision: 085a847fec3b2b61d7e79a1f387860217a72fe9e
+  branch: 4-0-stable
+  specs:
+    actionmailer (4.0.1)
+      actionpack (= 4.0.1)
+      mail (~> 2.5.4)
+    actionpack (4.0.1)
+      activesupport (= 4.0.1)
       builder (~> 3.1.0)
       erubis (~> 2.7.0)
       rack (~> 1.5.2)
       rack-test (~> 0.6.2)
-    activemodel (4.0.0)
-      activesupport (= 4.0.0)
+    activemodel (4.0.1)
+      activesupport (= 4.0.1)
       builder (~> 3.1.0)
-    activerecord (4.0.0)
-      activemodel (= 4.0.0)
+    activerecord (4.0.1)
+      activemodel (= 4.0.1)
       activerecord-deprecated_finders (~> 1.0.2)
-      activesupport (= 4.0.0)
+      activesupport (= 4.0.1)
       arel (~> 4.0.0)
-    activerecord-deprecated_finders (1.0.3)
-    activesupport (4.0.0)
+    activesupport (4.0.1)
       i18n (~> 0.6, >= 0.6.4)
       minitest (~> 4.2)
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
+    rails (4.0.1)
+      actionmailer (= 4.0.1)
+      actionpack (= 4.0.1)
+      activerecord (= 4.0.1)
+      activesupport (= 4.0.1)
+      bundler (>= 1.3.0, < 2.0)
+      railties (= 4.0.1)
+      sprockets-rails (~> 2.0.0)
+    railties (4.0.1)
+      actionpack (= 4.0.1)
+      activesupport (= 4.0.1)
+      rake (>= 0.8.7)
+      thor (>= 0.18.1, < 2.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activerecord-deprecated_finders (1.0.3)
     arel (4.0.1)
     atomic (1.1.14)
     builder (3.1.4)
@@ -53,27 +80,18 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    metaclass (0.0.1)
     mime-types (1.25)
     minitest (4.7.5)
+    mocha (0.14.0)
+      metaclass (~> 0.0.1)
     multi_json (1.8.2)
     mysql2 (0.3.13)
+    nifty-generators (0.4.6)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
-    rails (4.0.0)
-      actionmailer (= 4.0.0)
-      actionpack (= 4.0.0)
-      activerecord (= 4.0.0)
-      activesupport (= 4.0.0)
-      bundler (>= 1.3.0, < 2.0)
-      railties (= 4.0.0)
-      sprockets-rails (~> 2.0.0)
-    railties (4.0.0)
-      actionpack (= 4.0.0)
-      activesupport (= 4.0.0)
-      rake (>= 0.8.7)
-      thor (>= 0.18.1, < 2.0)
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
@@ -112,13 +130,16 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  authlogic!
   cancan
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
   kaminari
+  mocha
   mysql2
-  rails (= 4.0.0)
+  nifty-generators
+  rails!
   sass-rails (~> 4.0.0)
   sdoc
   turbolinks

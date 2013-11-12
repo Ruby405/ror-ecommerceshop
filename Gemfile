@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+#gem 'rails', '4.0.0'
+gem 'rails', github: 'rails/rails', branch: '4-0-stable'
 
 # Use mysql as the database for Active Record
 gem 'mysql2'
@@ -34,7 +35,9 @@ end
 
 # gem 'ransack'
 gem 'kaminari'
+gem "nifty-generators", :group => :development
 gem 'cancan'
+gem "authlogic", :git => "git://github.com/binarylogic/authlogic.git"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -47,3 +50,5 @@ gem 'cancan'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem "mocha", group: :test
