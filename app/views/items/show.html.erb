@@ -25,7 +25,9 @@
   <%= '%.2f' % @item.price %>
 </p>
 
-<%= link_to 'Buy Now', '#', :class => "btn btn-warning", :style => 'margin-bottom: 20px;' %>
+<%=
+    #link_to 'Buy Now', '#', :class => "btn btn-warning", :style => 'margin-bottom: 20px;'
+%>
 
 <div>
   <%= link_to 'Edit', edit_item_path(@item), :class => "btn btn-info" %>
