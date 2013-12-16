@@ -13,7 +13,6 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
     <ul class="nav navbar-nav">
       <% @categories.each do |category| %>
-          <% puts "Category: #{category.name}. Params: #{params}" %>
           <li <%= 'class=active' if params[:category] and category.name.casecmp(params[:category]) == 0 %>>
             <a href="/items?category=<%= category.name.downcase %>">
             <%= category.name.titleize %>
